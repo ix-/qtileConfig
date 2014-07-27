@@ -21,3 +21,16 @@ def executeOnce(process, *args):
 def startup():
     '''executes on startup'''
     executeOnce("wpa_gui", "-t")
+
+@hook.subscribe.startup
+def mousePointer():
+    '''display a left pointer as mouse'''
+    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
+
+# Execute when new client is spawned
+@hook.subscribe.client_new
+def floating_dialogs(window):
+    dialog = window.window.get_wm_type() == 'dialog'
+    transient = window.window.get_wm_transient_for()
+    if dialog or transient:
+        window.floating = True
