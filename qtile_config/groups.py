@@ -5,11 +5,13 @@ from .modifiers import mod
 
 groups = [
     Group("a"),
+    Group("s"),
     Group("d"),
     Group("f"),
     Group("u"),
     Group("i"),
     Group("o"),
+    Group("p"),
 ]
 
 group_keys = []

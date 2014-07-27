@@ -1,6 +1,8 @@
 from libqtile.config import Key
 from libqtile.command import lazy
 
+from qtile_config  import app
+
 from .modifiers import mod
 
 command_keys = [
@@ -69,12 +71,10 @@ command_keys = [
     Key([mod], "Delete", lazy.shutdown()),
 
     # Spawn programs
-    Key([mod], "r", lazy.spawncmd()),
-    Key([mod], "Return", lazy.spawn("gnome-terminal")),
-    Key([mod], "c", lazy.spawn("google-chrome")),
-    Key([mod], "s", lazy.spawn("subl")),
-    Key([mod], "x", lazy.spawn("xchat")),
-    Key([mod], "h", lazy.spawn("hipchat")),
+    Key([mod], "Return", lazy.spawn(app.screen)),
+    Key([mod], "c", lazy.spawn(app.browser)),
+    Key([mod], "x", lazy.spawncmd()),
+    Key([mod], "z", lazy.spawn(app.terminal)),
 
     # Volume control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
