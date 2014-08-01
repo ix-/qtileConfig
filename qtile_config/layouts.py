@@ -11,9 +11,8 @@ layouts = [
 ]
 
 floating_layout = layout.Floating(auto_float_types=[
-    "notification",
-    "toolbar",
-    "splash",
-    "dialog",
-    "utility",
+  "notification",
+  "toolbar",
+  "splash",
+  "dialog",
 ])

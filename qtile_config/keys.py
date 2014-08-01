@@ -41,6 +41,11 @@ command_keys = [
     # Widen or shrink a pane
     Key([mod], "bracketright", lazy.layout.increase_ratio()),
     Key([mod], "bracketleft", lazy.layout.decrease_ratio()),
+    Key([mod], "v", lazy.layout.grow()),
+    Key([mod], "b", lazy.layout.shrink()),
+    Key([mod], "n", lazy.layout.normalize()),
+    Key([mod], "m", lazy.layout.maximize()),
+    Key([mod, "shift"], "m", lazy.layout.flip()),
 
     # Switch window focus to other pane(s) of stack
     Key(
@@ -79,6 +84,9 @@ command_keys = [
     # Volume control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -c 0 sset Master 1- unmute")),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute"))
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
+
+    # Toggle floating
+    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
 
 ]

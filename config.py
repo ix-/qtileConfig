@@ -10,6 +10,7 @@ from qtile_config.groups import groups, group_keys
 from qtile_config.keys import command_keys
 from qtile_config.layouts import layouts, floating_layout
 from qtile_config.screens import screens
+from qtile_config.mouse import mouse
 from qtile_config import hooks
 
 keys = group_keys + command_keys
@@ -19,7 +20,6 @@ dgroups_app_rules = []
 
 main = None
 follow_mouse_focus = True
-bring_front_click = False
+bring_front_click = True
 cursor_warp = False
-mouse = ()
 auto_fullscreen = True
