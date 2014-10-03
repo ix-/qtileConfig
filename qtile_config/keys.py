@@ -69,8 +69,8 @@ command_keys = [
     ),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab",    lazy.nextlayout()),
-    Key([mod], "w",      lazy.window.kill()),
+    Key([mod], "Tab", lazy.nextlayout()),
+    Key([mod], "w", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod], "Delete", lazy.shutdown()),
@@ -80,6 +80,7 @@ command_keys = [
     Key([mod], "c", lazy.spawn(app.browser)),
     Key([mod], "x", lazy.spawncmd()),
     Key([mod], "z", lazy.spawn(app.terminal)),
+    Key([mod, "shift"], "l", lazy.spawn(app.locker['lock'])),
 
     # Volume control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
@@ -87,6 +88,6 @@ command_keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer -c 0 sset Master 1+ unmute")),
 
     # Toggle floating
-    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key([mod], "l", lazy.window.toggle_floating()),
 
 ]

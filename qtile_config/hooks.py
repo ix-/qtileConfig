@@ -1,4 +1,5 @@
 from libqtile import hook
+from qtile_config import app
 import subprocess
 import re
 
@@ -36,8 +37,8 @@ def mousePointer():
 
 @hook.subscribe.startup
 def lockOnIdle():
-    ''' calls xautolock to slock after a given time (in min) of inactivity'''
-    executeOnce("xautolock", "-time 5", "-locker slock")
+    ''' calls a screenlock  after a given time (in min) of inactivity'''
+    executeOnce(app.locker['init'])
 
 
 #  Execute when new client is spawned
