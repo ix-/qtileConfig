@@ -22,13 +22,13 @@ def executeOnce(process, *args):
         return subprocess.Popen(process.split())
 
 
-#  Execute on Startup
+#  Execute on Startup; Set in apps
 @hook.subscribe.startup
 def startup():
     ''' executes on startup '''
-    executeOnce("wpa_gui", "-t")
-    executeOnce("conky -d")
-    executeOnce(app.locker['init'])
+    executeOnce(*app.netGui)
+    executeOnce(*app.wallpaper)
+    executeOnce(*app.locker['init'])
 
 
 @hook.subscribe.startup

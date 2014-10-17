@@ -2,9 +2,11 @@ from libqtile.config import Screen
 from libqtile import bar, widget
 
 widget_defaults = {
-    'font': 'Ubuntu Mono'
+    'font': 'DejaVu Sans',
+    'fontshadow': '#000000',
+    'fontsize': 14,
+    'urgent_alert_method': 'text',
 }
-
 screens = [
     Screen(
         bottom=bar.Bar(
@@ -16,6 +18,7 @@ screens = [
                 widget.NetGraph(graph_color='CC6600', fill_color='FFBB11', bandwidth_type='up'),
                 widget.Sep(),
                 widget.Prompt(**widget_defaults),
+                # widget.Notify(),
                 widget.WindowName(**widget_defaults),
                 widget.Sep(),
                 widget.Systray(),
