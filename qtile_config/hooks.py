@@ -27,18 +27,14 @@ def executeOnce(process, *args):
 def startup():
     ''' executes on startup '''
     executeOnce("wpa_gui", "-t")
+    executeOnce("conky -d")
+    executeOnce(app.locker['init'])
 
 
 @hook.subscribe.startup
 def mousePointer():
     ''' display a left pointer as mouse '''
     subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
-
-
-@hook.subscribe.startup
-def lockOnIdle():
-    ''' calls a screenlock  after a given time (in min) of inactivity'''
-    executeOnce(app.locker['init'])
 
 
 #  Execute when new client is spawned

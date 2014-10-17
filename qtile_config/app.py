@@ -6,5 +6,5 @@ browser = 'firefox-bin'
 # Screenlock:
 #    init is called by hook.py on startup
 #    toggle is called by keys.py on keypress
-locker = {'init': 'xautolock -time 10 -locker slock -corners +-00 -cornerdelay 2',
+locker = {'init': 'xautolock -time 10 -locker slock -corners +-00 -cornerdelay 2 -cornerredelay 5',
           'lock': 'xautolock -locknow'}
