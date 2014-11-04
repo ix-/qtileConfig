@@ -27,10 +27,11 @@ qtile_config.keys
 * mod+Return - spawn the app.screen()
 * mod+c - spawn the app.browser
 * mod+x - spawn the dmenu-style cmdline
-* mod+z - spawn the app.terminal
-
+* mod+z - spawn the app.terminal 
+* mod+l - lock screen (needs app.LOCKER to be defined)
 qtile_config.layouts
 --------------------
+<+TODO+>
 
 qtile_config.modifiers
 ----------------------
@@ -38,7 +39,24 @@ mod = mod4
 
 qtile_config.mouse
 ------------------
+<+TODO+>
 
 qtile_config.screens
 --------------------
+<+TODO+>
 
+qtile_config.toolbox
+--------------------
+toolbox.iio2
+''''''''''''
+iio2 is a python2 connection checker that depends on urllib2
+
+* iio2.isItOnline(reference): check if the reference can be connected (via http 'GET' request) 
+* iio2.waitForConnection(reference, sleeptime=1, times=10): checks 10 times for the reference to be reachable.
+
+toolbox.proc
+'''''''''''''
+proc handles processes
+
+* proc.isRunning(process): check if process is running
+* proc.executeOnce(process): executes process if it was not already started
