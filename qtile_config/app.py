@@ -14,7 +14,7 @@ browser = 'firefox-bin'
 # Screenlock:
 #    init is called by hook.py on startup
 #    toggle is called by keys.py on keypress
-locker = {'init': ("xautolock",
+LOCKER = {'init': ("xautolock",
                    "-time 10",
                    "-locker slock",
                    "-corners +-00",
@@ -22,8 +22,10 @@ locker = {'init': ("xautolock",
                    "-cornerredelay 5"),
           'lock': 'xautolock -locknow'}
 
-netGui = ('wpa_gui', '-t')
-wallpaper = ("conky",
-             "--config",
+NETGUI = ('wpa_gui', '-t')
+NTPDAEMON = ('chronyc', '-a', 'online')
+REFERENCE = ('http://131.130.142.98')  # nawi.at for connection checking
+WALLPAPER = ("conky",
+             "-c",
              "/".join((peripherals, "conkyrc")),
              "--daemonize")

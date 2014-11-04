@@ -1,0 +1,84 @@
+# Conky, a system monitor, based on torsmo
+#
+# Any original torsmo code is licensed under the BSD license
+#
+# All code written since the fork of torsmo is licensed under the GPL
+#
+# Please see COPYING for details
+#
+# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+# Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+# All rights reserved.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+alignment middle_middle
+background yes
+border_width 1
+cpu_avg_samples 2
+default_color purple
+default_outline_color 5b6dad
+default_shade_color purple
+double_buffer yes
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont DejaVu Sans Mono:size=12
+gap_x 0
+gap_y -20
+minimum_size 320 800
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_transparent yes
+stippled_borders 0
+update_interval 2.0
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+${scroll 20 $nodename - $sysname $kernel on $machine | } $alignr ${time}
+${color #ffcb48} System $hr 1
+${color #5b6dad} Uptime:$color $uptime $alignr $color $freq_g${color #5b6dad} :Frequency (in GHz)
+${color #5b6dad} RAM Usage: $color $mem/$memmax - $memperc% ${membar 10,140} $alignr  ${swapbar 10,140} $swapperc% - $color $swap/$swapmax ${color #5b6dad} :Swap Usage
+${color #5b6dad} CPU Usage: $color $cpu% ${cpubar 10,140} $alignr$color ${hwmon temp 1 }°C ${color #5b6dad} :CPU Temperature
+${cpugraph 50, / purple orange -t}
+
+${color #ffcb48}File systems ${hr 1}
+ / $color${fs_used /}/${fs_size /} ${fs_bar 10,140 /} ${color #ffcb48} /home $color${fs_used /home}/${fs_size /home} ${fs_bar 10,140 /home}${color #ffcb48} /portage $color${fs_used /usr/portage}/${fs_size /usr/portage} ${fs_bar 10,140 /usr/portage}
+${color #ffcb48}Wi-Fi ${hr 1}
+${color #5b6dad} Wireless signal: $color${wireless_link_qual wlan0}% $alignr  $color${addr wlan0} ${color red} ${color #5b6dad} :IP address
+ ${color red}Downloaded: $color ${totaldown wlan0} $alignc ${color #5b6dad}Up:$color ${upspeed wlan0} - $color ${downspeed wlan0}  ${color #5b6dad} :Down$alignr  $color${totalup wlan0} ${color green}:Uploaded
+
+${color #ffcb48}Name              PID   CPU%   MEM% ${hr 1}
+${color #5b6dad} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color #5b6dad} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color #5b6dad} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color #5b6dad} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+$alignr ${color #5b6dad} Processes:$color $processes  ${color grey}Running:$color $running_processes
+${color #ffcb48}Rss ${hr 1}
+$color Python Planet:
+${color #5b6dad} ${rss http://planetpython.org/rss20.xml 1 item_titles 9 }
+${color #ffcb48}Connections ${color #ffcb48} $hr 1 
+$color In: ${tcp_portmon 1 32767 count}  Out: ${tcp_portmon 32768 61000 count}${alignr}
+${color #ffcb48}Entropy ${color #ffcb48} $color $entropy_bar 

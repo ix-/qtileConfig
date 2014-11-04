@@ -80,7 +80,7 @@ command_keys = [
     Key([mod], "c", lazy.spawn(app.browser)),
     Key([mod], "x", lazy.spawncmd()),
     Key([mod], "z", lazy.spawn(app.terminal)),
-    Key([mod, "shift"], "l", lazy.spawn(app.locker['lock'])),
+    Key([mod, "shift"], "l", lazy.spawn(app.LOCKER['lock'])),
 
     # Volume control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),

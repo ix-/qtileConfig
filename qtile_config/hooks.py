@@ -1,7 +1,10 @@
+''' run hooks '''
+
 from libqtile import hook
 from qtile_config import app
 import subprocess
 import re
+from qtile_config.toolbox import iio2 as iio
 
 
 def isRunning(process):
@@ -26,9 +29,11 @@ def executeOnce(process, *args):
 @hook.subscribe.startup
 def startup():
     ''' executes on startup '''
-    executeOnce(*app.netGui)
-    executeOnce(*app.wallpaper)
-    executeOnce(*app.locker['init'])
+    executeOnce(*app.NETGUI)
+    executeOnce(*app.WALLPAPER)
+    executeOnce(*app.LOCKER['init'])
+    if iio.waitForConnection(app.REFERENCE):  # if we have a connection
+        executeOnce(*app.NTPDAEMON)
 
 
 @hook.subscribe.startup
