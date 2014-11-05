@@ -47,15 +47,13 @@ qtile_config.screens
 
 qtile_config.toolbox
 --------------------
-toolbox.iio2
-''''''''''''
+### toolbox.iio2 ###
 iio2 is a python2 connection checker that depends on urllib2
 
 * iio2.isItOnline(reference): check if the reference can be connected (via http 'GET' request) 
 * iio2.waitForConnection(reference, sleeptime=1, times=10): checks 10 times for the reference to be reachable.
 
-toolbox.proc
-'''''''''''''
+### toolbox.proc ###
 proc handles processes
 
 * proc.isRunning(process): check if process is running
