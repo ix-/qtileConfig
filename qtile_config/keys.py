@@ -70,17 +70,18 @@ command_keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.nextlayout()),
-    Key([mod], "w", lazy.window.kill()),
-
-    Key([mod, "control"], "r", lazy.restart()),
-    Key([mod], "Delete", lazy.shutdown()),
+    
+    # Control clients and qtile
+    Key([mod], "w", lazy.window.kill()),  # kill a client
+    Key([mod, "control"], "r", lazy.restart()),  # restart qtile
+    Key([mod], "Delete", lazy.shutdown()),  # shutdown qtile
 
     # Spawn programs
-    Key([mod], "Return", lazy.spawn(app.screen)),
-    Key([mod], "c", lazy.spawn(app.browser)),
-    Key([mod], "x", lazy.spawncmd()),
-    Key([mod], "z", lazy.spawn(app.terminal)),
-    Key([mod, "shift"], "l", lazy.spawn(app.LOCKER['lock'])),
+    Key([mod], "Return", lazy.spawn(app.screen)),  # start multiplexing termial
+    Key([mod], "c", lazy.spawn(app.browser)),  # start browser
+    Key([mod], "x", lazy.spawncmd()),  # start dmenu style cmd line
+    Key([mod], "z", lazy.spawn(app.terminal)),  # start single terminal
+    Key([mod, "shift"], "l", lazy.spawn(app.LOCKER['lock'])),  # lock screen
 
     # Volume control
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
