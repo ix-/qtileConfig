@@ -59,7 +59,7 @@ show_graph_range no
 
 TEXT
 ${scroll 20 $nodename - $sysname $kernel on $machine | } $alignr ${time}
-${color #ffcb48} System $hr 1
+${color #ffcb48} System ${hr 1}
 ${color #5b6dad} Uptime:$color $uptime $alignr $color $freq_g${color #5b6dad} :Frequency (in GHz)
 ${color #5b6dad} RAM Usage: $color $mem/$memmax - $memperc% ${membar 10,140} $alignr  ${swapbar 10,140} $swapperc% - $color $swap/$swapmax ${color #5b6dad} :Swap Usage
 ${color #5b6dad} CPU Usage: $color $cpu% ${cpubar 10,140} $alignr$color ${hwmon temp 1 }°C ${color #5b6dad} :CPU Temperature
