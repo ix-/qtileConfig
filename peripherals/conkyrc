@@ -80,6 +80,6 @@ $alignr ${color #5b6dad} Processes:$color $processes  ${color grey}Running:$colo
 ${color #ffcb48}Rss ${hr 1}
 $color Python Planet:
 ${color #5b6dad} ${rss http://planetpython.org/rss20.xml 1 item_titles 9 }
-${color #ffcb48}Connections ${color #ffcb48} $hr 1 
+${color #ffcb48}Connections ${color #ffcb48} ${hr 1}
 $color In: ${tcp_portmon 1 32767 count}  Out: ${tcp_portmon 32768 61000 count}${alignr}
 ${color #ffcb48}Entropy ${color #ffcb48} $color $entropy_bar 
