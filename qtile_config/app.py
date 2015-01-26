@@ -3,12 +3,12 @@ import os
 
 
 # common config files used by qtile
-peripherals = "/".join((os.getenv("HOME"), "qtile-config", "peripherals"))
+PERIPHERALS = "/".join((os.getenv("HOME"), "qtile-config", "peripherals"))
 
 # common programs mapped to keys
-screen = 'st -e screen -RD'
-terminal = 'st'
-browser = 'firefox-bin'
+MULTIPLEXER = 'st -e screen -RD'
+TERMINAL = 'st'
+BROWSER = 'firefox-bin -F'
 
 # init programs called by hooks.startup()
 # Screenlock:
@@ -27,5 +27,5 @@ NTPDAEMON = ('chronyc', '-a', 'online')
 REFERENCE = ('http://131.130.142.98')  # nawi.at for connection checking
 WALLPAPER = ("conky",
              "-c",
-             "/".join((peripherals, "conkyrc")),
+             "/".join((PERIPHERALS, "conkyrc")),
              "--daemonize")

@@ -70,17 +70,17 @@ command_keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.nextlayout()),
-    
+
     # Control clients and qtile
     Key([mod], "w", lazy.window.kill()),  # kill a client
     Key([mod, "control"], "r", lazy.restart()),  # restart qtile
     Key([mod], "Delete", lazy.shutdown()),  # shutdown qtile
 
     # Spawn programs
-    Key([mod], "Return", lazy.spawn(app.screen)),  # start multiplexing termial
-    Key([mod], "c", lazy.spawn(app.browser)),  # start browser
+    Key([mod], "Return", lazy.spawn(app.MULTIPLEXER)),  # start multiplexing termial
+    Key([mod], "c", lazy.spawn(app.BROWSER)),  # start browser
     Key([mod], "x", lazy.spawncmd()),  # start dmenu style cmd line
-    Key([mod], "z", lazy.spawn(app.terminal)),  # start single terminal
+    Key([mod], "z", lazy.spawn(app.TERMINAL)),  # start single terminal
     Key([mod, "shift"], "l", lazy.spawn(app.LOCKER['lock'])),  # lock screen
 
     # Volume control

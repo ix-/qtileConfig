@@ -23,3 +23,4 @@ follow_mouse_focus = True
 bring_front_click = True
 cursor_warp = False
 auto_fullscreen = True
+wmname = "qtile"
